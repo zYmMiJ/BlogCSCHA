@@ -12529,23 +12529,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\subji\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Nassim\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\subji\\source\\repos\\Blog\\Blog\\W.csproj",
-      "projectName": "W",
-      "projectPath": "C:\\Users\\subji\\source\\repos\\Blog\\Blog\\W.csproj",
-      "packagesPath": "C:\\Users\\subji\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\subji\\source\\repos\\Blog\\Blog\\obj\\",
+      "projectUniqueName": "C:\\Users\\Nassim\\Source\\Repos\\BlogCSCHA\\Blog\\Blog.csproj",
+      "projectName": "Blog",
+      "projectPath": "C:\\Users\\Nassim\\Source\\Repos\\BlogCSCHA\\Blog\\Blog.csproj",
+      "packagesPath": "C:\\Users\\Nassim\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nassim\\Source\\Repos\\BlogCSCHA\\Blog\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\subji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nassim\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12581,6 +12577,7 @@
             "version": "[2.1.2, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
@@ -12591,10 +12588,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
