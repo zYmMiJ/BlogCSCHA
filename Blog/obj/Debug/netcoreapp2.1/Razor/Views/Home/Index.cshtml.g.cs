@@ -61,7 +61,7 @@ using Blog.Models;
             WriteLiteral("        <li>\r\n            ");
             EndContext();
             BeginContext(149, 114, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0ff7546ea8674ea6949632e8f5af5a82", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab4fe6cf0017423daab1d91e412d7cc1", async() => {
                 BeginContext(216, 18, true);
                 WriteLiteral("\r\n                ");
                 EndContext();
@@ -108,7 +108,7 @@ using Blog.Models;
             WriteLiteral("\r\n            -\r\n            ");
             EndContext();
             BeginContext(292, 107, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b42dcc2c091c4a6aa5491c9ea2dcb3ee", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aebd4763a8c749b1ab507bd7631f2117", async() => {
                 BeginContext(359, 36, true);
                 WriteLiteral("\r\n                Edit\r\n            ");
                 EndContext();
@@ -145,7 +145,7 @@ using Blog.Models;
             WriteLiteral("\r\n            -\r\n            ");
             EndContext();
             BeginContext(428, 111, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "814dac41165642e09c1dceee205f37aa", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d8290183b3c494a85c3905f4eff856e", async() => {
                 BeginContext(497, 38, true);
                 WriteLiteral("\r\n                Remove\r\n            ");
                 EndContext();

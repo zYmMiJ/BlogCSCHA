@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Blog.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Blog.Data
 {
-    public class AppdbContext : DbContext
+    public class AppdbContext : IdentityDbContext
     {
         public AppdbContext(DbContextOptions<AppdbContext> options)
             :base(options)
