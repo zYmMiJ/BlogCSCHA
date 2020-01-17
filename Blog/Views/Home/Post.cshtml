@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = Model.Title;
     ViewBag.Description = Model.Description;
-    ViewBag.Keywords = $"{Model.Tags?.Replace("","")} {Model.Category}"; 
+    ViewBag.Keywords = $"{Model.Tags?.Replace(",","")} {Model.Category}"; 
 }
 
 
