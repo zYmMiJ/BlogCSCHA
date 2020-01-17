@@ -21,12 +21,12 @@ namespace Blog.Data.Repository
 
         }
 
-        public List<Post> GetAllPost()
+        public List<Post> GetAllPosts()
         {
             return _ctx.Posts.ToList();
         }
 
-        public List<Post> GetAllPost(string category)
+        public List<Post> GetAllPosts(string category)
         {
             Func<Post, bool> InCategory = (post) => { return post.Category.ToLower().Equals(category.ToLower()); };
 
