@@ -11,6 +11,7 @@ using Blog.Data;
 using Microsoft.EntityFrameworkCore;
 using Blog.Data.Repository;
 using Microsoft.AspNetCore.Identity;
+using Blog.Data.FileManager;
 
 namespace Blog
 {
@@ -28,7 +29,7 @@ namespace Blog
         {
             services.AddDbContext<AppdbContext>(options => options.UseSqlServer(_config["DefaultConnection"]));
 
-            services.AddDefaultIdentity<IdentityUser>(options =>
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
                 //Regle de mot de passe
                 options.Password.RequireDigit = false;
@@ -37,10 +38,16 @@ namespace Blog
                 options.Password.RequiredLength = 6;
 
             })
-                .AddRoles<IdentityRole>()
+                //.AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<AppdbContext>();
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Auth/Login";
+            });
+
             services.AddTransient<IRepository, Repository>();
+            services.AddTransient<IFileManager, FileManager>();
 
             services.AddMvc();
       
@@ -53,6 +60,9 @@ namespace Blog
             {
                 app.UseDeveloperExceptionPage();
             }
+            //Permet d'utiliser les fichier présent dans wwwroot (static files)
+            app.UseStaticFiles();
+
             app.UseAuthentication();
             app.UseMvcWithDefaultRoute();
             //app.Run(async (context) =>

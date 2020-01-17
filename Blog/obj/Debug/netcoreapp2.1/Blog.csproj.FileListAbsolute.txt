@@ -43,7 +43,6 @@ C:\Users\Nassim\Source\Repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Blog.Assembl
 C:\Users\Nassim\Source\Repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Blog.TagHelpers.input.cache
 C:\Users\Nassim\Source\Repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Blog.TagHelpers.output.cache
 C:\Users\Nassim\Source\Repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Blog.RazorCoreGenerate.cache
-C:\Users\Nassim\Source\Repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home\Edit.cshtml.g.cs
 C:\Users\Nassim\Source\Repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Nassim\Source\Repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home\Post.cshtml.g.cs
 C:\Users\Nassim\Source\Repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -55,3 +54,6 @@ C:\Users\Nassim\Source\Repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Blog.Views.p
 C:\Users\Nassim\Source\Repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Blog.dll
 C:\Users\Nassim\Source\Repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Blog.pdb
 C:\Users\Nassim\Source\Repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Blog.csproj.CopyComplete
+C:\Users\Nassim\source\repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Login.cshtml.g.cs
+C:\Users\Nassim\source\repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Panel\Index.cshtml.g.cs
+C:\Users\Nassim\source\repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Panel\Edit.cshtml.g.cs
