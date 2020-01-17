@@ -4,14 +4,16 @@ using Blog.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Blog.Migrations
 {
     [DbContext(typeof(AppdbContext))]
-    partial class AppdbContextModelSnapshot : ModelSnapshot
+    [Migration("20200117203347_Meta Fields")]
+    partial class MetaFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,15 +29,9 @@ namespace Blog.Migrations
 
                     b.Property<string>("Body");
 
-                    b.Property<string>("Category");
-
                     b.Property<DateTime>("Created");
 
-                    b.Property<string>("Description");
-
                     b.Property<string>("Image");
-
-                    b.Property<string>("Tags");
 
                     b.Property<string>("Title");
 

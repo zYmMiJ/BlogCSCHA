@@ -1,10 +1,10 @@
 ﻿body {
     margin: 0;
-    background-color: #151517
+    background-color: #ffffff
 }
 
 a{
-    color: white;
+    color: red;
     text-decoration: none;
 }
 a:hover{
@@ -31,7 +31,7 @@ nav {
     }
     .title{
         position: absolute;
-        color: white;
+        color: red;
         font-size: 40px;
         left: 50%;
         transform: translateX(-50%);
