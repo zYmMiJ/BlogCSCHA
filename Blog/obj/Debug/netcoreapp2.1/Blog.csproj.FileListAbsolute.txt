@@ -87,3 +87,4 @@ C:\Users\subji\source\repos\BlogCSCHA\blog\obj\Debug\netcoreapp2.1\Blog.Views.pd
 C:\Users\subji\source\repos\BlogCSCHA\blog\obj\Debug\netcoreapp2.1\Blog.dll
 C:\Users\subji\source\repos\BlogCSCHA\blog\obj\Debug\netcoreapp2.1\Blog.pdb
 C:\Users\subji\source\repos\BlogCSCHA\blog\obj\Debug\netcoreapp2.1\Blog.csproj.CopyComplete
+C:\Users\Nassim\source\repos\BlogCSCHA\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home\_MainComment.cshtml.g.cs

@@ -19,12 +19,17 @@ using Blog.Models;
 #line default
 #line hidden
 #line 2 "C:\Users\Nassim\source\repos\BlogCSCHA\Blog\Views\_ViewImports.cshtml"
+using Blog.Models.Comments;
+
+#line default
+#line hidden
+#line 3 "C:\Users\Nassim\source\repos\BlogCSCHA\Blog\Views\_ViewImports.cshtml"
 using Blog.ViewModels;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f503ea7c6f05bdf21f5eab4b9e884859e4fe873f", @"/Views/Panel/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9c1dd89ee945937e85fe2e65d1d46d865d868a6a", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"589cc89b1f87f47cabbc31f53b279948e21071bd", @"/Views/_ViewImports.cshtml")]
     public class Views_Panel_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Post>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Panel", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -56,7 +61,7 @@ using Blog.ViewModels;
             WriteLiteral("<h2> Admin Panel </h2>\r\n");
             EndContext();
             BeginContext(59, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "65176bf8d7f745a8985dac2faf0f20f7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f1ebe3ec36bf4e70b2bcc197653a2cdb", async() => {
                 BeginContext(103, 20, true);
                 WriteLiteral("\r\n    Add new Post\r\n");
                 EndContext();
@@ -99,7 +104,7 @@ using Blog.ViewModels;
             WriteLiteral("\r\n                -\r\n                ");
             EndContext();
             BeginContext(277, 116, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf894cbd8fe841f4a6a958ba61728487", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "794d5c52d4134684a4d519093ef0036f", async() => {
                 BeginContext(345, 44, true);
                 WriteLiteral("\r\n                    Edit\r\n                ");
                 EndContext();
@@ -136,7 +141,7 @@ using Blog.ViewModels;
             WriteLiteral("\r\n                -\r\n                ");
             EndContext();
             BeginContext(430, 120, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed32e61c5fe548b799fa7cf6a50b12ae", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "886e8fac7b07462680e73eaac3b926a6", async() => {
                 BeginContext(500, 46, true);
                 WriteLiteral("\r\n                    Remove\r\n                ");
                 EndContext();
