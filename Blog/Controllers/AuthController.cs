@@ -68,11 +68,11 @@ namespace Blog.Controllers
             //create an admin
             var user = new IdentityUser
             {
-                UserName = vm.Email,
+                UserName = vm.UserName,
                 Email = vm.Email
             };
 
-            var result = await _userManager.CreateAsync(user, "password"); 
+            var result = await _userManager.CreateAsync(user, vm.Password); 
 
             if ( result.Succeeded )
             {
