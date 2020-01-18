@@ -141,5 +141,26 @@ namespace Blog.Data.Repository
         {
             _ctx.SubComments.Add(comment);
         }
+        public MainComment GetMainComment(int id)
+        {
+            return _ctx.MainComments
+                .FirstOrDefault(p => p.Id == id); ;
+        }
+
+        public void RemoveMainComments(int id)
+        {
+            _ctx.MainComments.Remove(GetMainComment(id));
+        }
+
+        public SubComment GetSubComment(int id)
+        {
+            return _ctx.SubComments
+                .FirstOrDefault(p => p.Id == id); ;
+        }
+
+        public void RemoveSubComments(int id)
+        {
+            _ctx.SubComments.Remove(GetSubComment(id));
+        }
     }
 }

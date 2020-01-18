@@ -6,74 +6,98 @@
 }
 
 
-    <div class="container">
-        <div class="post no-shadow">
-                @if (!String.IsNullOrEmpty(Model.Image))
-                {
-                    var image_path = $"/Image/{Model.Image}";
-                    <img src="@image_path" />
-                    
-                }
-        </div>
-        <div class="post-body">
-            <h1>@Model.Title</h1>
-            @Html.Raw(Model.Body)
-        </div>
-        <hr>
-        <h6>@Model.MainComments.Count commentaires</h6>
+<div class="container">
+    <div class="post no-shadow">
+        @if (!String.IsNullOrEmpty(Model.Image))
+        {
+            var image_path = $"/Image/{Model.Image}";
+            <img src="@image_path" />
 
-        @if (User.Identity.IsAuthenticated)
-        { 
-            <div class="comment-section">
-                @{
-                    await Html.RenderPartialAsync("_MainComment", new CommentViewModel { PostId = Model.Id, MainCommentId = 0 });
-                }
+        }
+    </div>
+    <div class="post-body">
+        <h1>@Model.Title</h1>
+        @Html.Raw(Model.Body)
+    </div>
+    <hr>
+    <h6>@Model.MainComments.Count commentaires</h6>
 
-                @foreach (var c in Model.MainComments)
-                {
-                    <div style="margin-top:3vh">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="comment-section">
+            @{
+                await Html.RenderPartialAsync("_MainComment", new CommentViewModel { PostId = Model.Id, MainCommentId = 0 });
+            }
 
-                        <div class="row">
-                            <div class="col s12 m5">
-                                Commentaire
-                                <div class="card-panel teal">
-                                    <span class="white-text">
-                                        @c.Message <br />
-                                        <div class="right">Posté le: @c.Created</div>
-                                    </span>
-                                </div>
+            @foreach (var c in Model.MainComments)
+            {
+                <div style="margin-top:3vh">
+
+                    <div class="row">
+                        <div class="col s12 m5">
+                            Commentaire
+                            <div class="card-panel teal">
+
+                                <span class="white-text">
+
+                                    @c.Message <br />
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        if (User.IsInRole("Admin"))
+                                        {
+                                            <a asp-controller="Home" class="right" style="color:red" asp-action="RemoveComment" asp-route-id="@c.Id" asp-route-idPost="@Model.Id">
+                                                <i class="material-icons">delete</i>
+                                            </a>
+                                        }
+                                    }
+                                    <div class="right">Posté le: @c.Created</div>
+
+
+                                </span>
+                               
                             </div>
                         </div>
                     </div>
-                    <div style="margin-left:20vh; margin-bottom:2vh">
-                        <h6>Répondre</h6>
-                        @{
-                            await Html.RenderPartialAsync("_MainComment", new CommentViewModel { PostId = Model.Id, MainCommentId = c.Id });
-                        }@foreach (var sc in c.SubComments)
-                        {
-                            <div style="margin-top:3vh">
-                                <div class="row">
-                                    <div class="col s12 m5">
-                                        Réponse
-                                        <div class="card-panel teal">
-                                            <span class="white-text">
-                                                @sc.Message <br />
-                                                <div class="right">Posté le: @sc.Created</div>
-                                            </span>
-                                        </div>
+                </div>
+                <div style="margin-left:20vh; margin-bottom:2vh">
+                    <h6>Répondre</h6>
+                    @{
+                        await Html.RenderPartialAsync("_MainComment", new CommentViewModel { PostId = Model.Id, MainCommentId = c.Id });
+                    }@foreach (var sc in c.SubComments)
+                    {
+                        <div style="margin-top:3vh">
+                            <div class="row">
+                                <div class="col s12 m5">
+                                    Réponse
+                                    <div class="card-panel teal">
+                                        <span class="white-text">
+                                            @sc.Message <br />
+                                            @if (User.Identity.IsAuthenticated)
+                                            {
+                                                if (User.IsInRole("Admin"))
+                                                {
+                                                    <a asp-controller="Home" class="right" style="color:red" asp-action="RemoveSubComment" asp-route-id="@sc.Id" asp-route-idPost="@Model.Id">
+                                                        <i class="material-icons">delete</i>
+                                                    </a>
+                                                }
+                                            }
+                                            <div class="right">Posté le: @sc.Created</div>
+                                        </span>
+                                       
                                     </div>
                                 </div>
                             </div>
-                        }
-                    </div>
-                }
+                        </div>
+                    }
+                </div>
+            }
 
-            </div>
-        }
-        else
-        {
-            <div>
-                <a asp-action="Login" asp-controller="Auth">Sign In</a> to comment 
-            </div>
-        }
-    </div>
+        </div>
+    }
+    else
+    {
+        <div>
+            <a asp-action="Login" asp-controller="Auth">Sign In</a> to comment
+        </div>
+    }
+</div>
