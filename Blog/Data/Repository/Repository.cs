@@ -34,7 +34,8 @@ namespace Blog.Data.Repository
         public IndexViewModel GetAllPosts(int pageNumber, string category)
         {
             Func<Post, bool> InCategory = (post) => { return post.Category.ToLower().Equals(category.ToLower()); };
-            int pageSize = 4;
+            int pageSize = 3;
+
             int skipAmount = pageSize * (pageNumber - 1);
 
             var query = _ctx.Posts.AsQueryable();
