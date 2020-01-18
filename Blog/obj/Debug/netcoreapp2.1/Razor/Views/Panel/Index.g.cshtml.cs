@@ -56,7 +56,7 @@ using Blog.ViewModels;
             WriteLiteral("<h2> Admin Panel </h2>\r\n");
             EndContext();
             BeginContext(59, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "19010c1f2bfb48328f9abc2e82d91187", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd5117880d924ef99290ed94dec9efb2", async() => {
                 BeginContext(103, 20, true);
                 WriteLiteral("\r\n    Add new Post\r\n");
                 EndContext();
@@ -99,7 +99,7 @@ using Blog.ViewModels;
             WriteLiteral("\r\n                -\r\n                ");
             EndContext();
             BeginContext(277, 116, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2f45734781ae4d6fb82de21c0771bd4c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f372a4d2690d4a1e825d48908dbb082b", async() => {
                 BeginContext(345, 44, true);
                 WriteLiteral("\r\n                    Edit\r\n                ");
                 EndContext();
@@ -136,7 +136,7 @@ using Blog.ViewModels;
             WriteLiteral("\r\n                -\r\n                ");
             EndContext();
             BeginContext(430, 120, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a77df75c906e43b898363403d45641d8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "291e6db2460a448185278b3172073ef2", async() => {
                 BeginContext(500, 46, true);
                 WriteLiteral("\r\n                    Remove\r\n                ");
                 EndContext();
