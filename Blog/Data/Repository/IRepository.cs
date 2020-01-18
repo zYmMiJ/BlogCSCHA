@@ -1,4 +1,5 @@
 ﻿using Blog.Models;
+using Blog.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,8 @@ namespace Blog.Data.Repository
     {
         Post GetPost(int id);
         List<Post> GetAllPosts();
-        List<Post> GetAllPosts(string Category);
+        IndexViewModel GetAllPosts(int pageNumber, string Category);
+    
         void AddPost(Post post);
         void UpdatePost(Post post);
         void RemovePost(int id);
