@@ -1,47 +1,46 @@
 ﻿@model PostViewModel
 
-@{ 
+@{
 
 }
-    <link href="~/content/lib/Trumbowyg-master/dist/ui/trumbowyg.min.css" rel="stylesheet" />
-    <div class="row">
-        <div class="col s12">
-            <form asp-controller="Panel" asp-action="Edit" method="post" enctype="multipart/form-data">
-                <input asp-for="Id" type="hidden" />
-                <div>
-                    <label>Titre</label>
-                    <input asp-for="Title" />
-                </div>
+<link href="~/content/lib/Trumbowyg-master/dist/ui/trumbowyg.min.css" rel="stylesheet" />
+<div class="row">
+    <div class="col s12">
+        <form asp-controller="Panel" asp-action="Edit" method="post" enctype="multipart/form-data">
+            <input asp-for="Id" type="hidden" />
+            <div>
+                <label>Titre</label>
+                <input asp-for="Title" />
+            </div>
 
-                <div>
-                    <label>Description</label>
-                    <input asp-for="Description" />
-                </div>
-                <div>
-                    <label>Tags</label>
-                    <input asp-for="Tags" />
-                </div>
-                <div>
-                    <label>Categorie</label>
-                    <select class="browser-default z-depth-0" asp-for="Category">
-                        <option value="Travel">Voyage</option>
-                        <option value="Programing">Programmation</option>
-                        <option value="Game">Jeux</option>
-                    </select>
+            <div>
+                <label>Description</label>
+                <input asp-for="Description" />
+            </div>
+            <div>
+                <label>Tags</label>
+                <input asp-for="Tags" />
+            </div>
+            <div>
+                <label>Categorie</label>
+                <select class="browser-default z-depth-0" asp-for="Category">
+                    <option value="Travel">Voyage</option>
+                    <option value="Programing">Programmation</option>
+                    <option value="Game">Jeux</option>
+                </select>
 
-                </div>
-                <div>
-                    <label>Ajoutez une image à votre article</label>
+            </div>
+            <div>
+                <label>Ajoutez une image à votre article</label>
 
-                    <input asp-for="CurrentImage" type="hidden" />
-                    <div class="file-field input-field">
-                        <div class="btn red">
-                            <span>Ajouter une image</span>
-                            <input asp-for="Image" />
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
+                <input asp-for="CurrentImage" type="hidden" />
+                <div class="file-field input-field">
+                    <div class="btn red">
+                        <span>Ajouter une image</span>
+                        <input asp-for="Image" />
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
                     </div>
 
                     <input asp-for="CurrentVideo" type="hidden" />
@@ -62,17 +61,24 @@
                     <textarea id="editor" asp-for="Body"></textarea>
                 </div>
 
-
-                <button class="btn waves-effect btn-large waves-light right" type="submit" value="submit">
-                         Enregistrer<i class="material-icons right">send</i>
-                </button>
-            </form>
             </div>
-        </div>
-        @section scripts {
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script src="~/content/lib/Trumbowyg-master/dist/trumbowyg.min.js"></script>
-            <script>
-                $('#editor').trumbowyg();
-            </script>
-        }
+            <div>
+                <label>Body</label>
+                <input />
+                <textarea id="editor" asp-for="Body"></textarea>
+            </div>
+
+
+            <button class="btn waves-effect btn-large waves-light right" type="submit" value="submit">
+                Enregistrer<i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+</div>
+@section scripts {
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="~/content/lib/Trumbowyg-master/dist/trumbowyg.min.js"></script>
+    <script>
+        $('#editor').trumbowyg();
+    </script>
+}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Blog.Data;
 using Blog.Data.FileManager;
@@ -8,6 +9,7 @@ using Blog.Data.Repository;
 using Blog.Models;
 using Blog.Models.Comments;
 using Blog.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blog.Controllers
@@ -16,6 +18,7 @@ namespace Blog.Controllers
     {
         private IRepository _repo;
         private IFileManager _fileManager;
+        private UserManager<IdentityUser> _userManager;
 
         public HomeController(IRepository ctx, IFileManager fileManager)
         {
@@ -50,6 +53,8 @@ namespace Blog.Controllers
             if (!ModelState.IsValid)
                 return RedirectToAction("Post", new { id = vm.PostId });
 
+
+            var userName = this.User.Identity.Name;
             var post = _repo.GetPost(vm.PostId);
             if (vm.MainCommentId == 0)
             {
@@ -58,7 +63,7 @@ namespace Blog.Controllers
 
                 post.MainComments.Add(new MainComment
                 {
-                    Message = vm.Message,
+                    Message =userName+": "+vm.Message,
                     Created = DateTime.Now,
 
                 });
@@ -69,7 +74,7 @@ namespace Blog.Controllers
                 var comment = new SubComment
                 {
                     MainCommentId = vm.MainCommentId,
-                    Message = vm.Message,
+                    Message = userName + ": " + vm.Message,
                     Created = DateTime.Now,
                 };
                 _repo.AddSubComment(comment);
