@@ -17,31 +17,48 @@
     <div>
         <nav>
             <div class="nav-wrapper">
+                
                 <a href="#" class="brand-logo">Blog de la hess</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul id="nav-mobile" class="hide-on-med-and-down" style="margin-left: 25vh;">
                     <li>
-                        <a asp-controller="Home" asp-action="Index">Accueil</a>
+                        <img src="~/content/static/logo.png" style="width: 6vh" />
                     </li>
                     <li>
                         <a asp-controller="Home" asp-action="Index" asp-route-category="Programing">Programmation</a>
                     </li>
-
-            @if (User.Identity.IsAuthenticated)
-            {
-                if (User.IsInRole("Admin"))
-                {
                     <li>
-                        <a asp-controller="Home" asp-action="Index" asp-route-category="Panel">Gestion des articles</a>
+                        <a asp-controller="Home" asp-action="Index" asp-route-category="Game">Jeux</a>
                     </li>
-                    
-                }
+                    <li>
+                        <a asp-controller="Home" asp-action="Index" asp-route-category="Travel">Voyage</a>
+                    </li>
 
-              <li> <a asp-controller="Auth" asp-action="Logout">Déconnexion</a></li>
-            }
-            else
-            {
-              <li><a asp-controller="Auth" asp-action="Login">Connexion</a></li>
-            }
+                </ul>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+                    <li>
+                        <a asp-controller="Home" asp-action="Index">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="mailto:san@antonio.net">Contact</a>
+                    </li>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a asp-controller="Panel" asp-action="Index" asp-route-category="Panel">Gestion des articles</a>
+                            </li>
+
+                        }
+
+                        <li> <a asp-controller="Auth" asp-action="Logout">Déconnexion</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Auth" asp-action="Login">Connexion</a></li>
+                    }
 
 
                 </ul>

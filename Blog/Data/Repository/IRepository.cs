@@ -11,12 +11,16 @@ namespace Blog.Data.Repository
     public interface IRepository
     {
         Post GetPost(int id);
+        MainComment GetMainComment(int id);
+        SubComment GetSubComment(int id);
         List<Post> GetAllPosts();
         IndexViewModel GetAllPosts(int pageNumber, string Category);
-    
+
         void AddPost(Post post);
         void UpdatePost(Post post);
         void RemovePost(int id);
+        void RemoveMainComments(int id);
+        void RemoveSubComments(int id);
         void AddSubComment(SubComment comment);
 
         Task<bool> SaveChangesAsync();

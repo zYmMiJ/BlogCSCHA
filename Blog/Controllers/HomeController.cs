@@ -79,6 +79,21 @@ namespace Blog.Controllers
 
             return RedirectToAction("Post", new { id = vm.PostId });
         }
+        [HttpGet]
+        public async Task<IActionResult> RemoveComment(int id, int idPost)
+        {
+            _repo.RemoveMainComments(id);
+            await _repo.SaveChangesAsync();
+            return RedirectToAction("Post", new { id = idPost });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> RemoveSubComment(int id, int idPost)
+        {
+            _repo.RemoveSubComments(id);
+            await _repo.SaveChangesAsync();
+            return RedirectToAction("Post", new { id = idPost });
+        }
     }
 }
 
