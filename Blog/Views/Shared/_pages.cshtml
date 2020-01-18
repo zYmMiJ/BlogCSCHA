@@ -1,11 +1,13 @@
 ﻿@model IndexViewModel
 
-<div class="pages">
+<ul class="pagination center">
     @if (Model.PageNumber > 1)
     {
+    <li class="disabled">
         <a asp-action="Index" asp-controller="Home" asp-route-category="@Model.Category" asp-route-pageNumber="@(Model.PageNumber - 1)">
-            <
+            <i class="material-icons">chevron_left</i>
         </a>
+    </li>
     }
 
     @foreach (var p in Model.Pages)
@@ -16,15 +18,21 @@
         }
         else
         {
-            <a class="@(p == Model.PageNumber ? "active" : "")" asp-action="Index" asp-controller="Home" asp-route-category="@Model.Category" asp-route-pageNumber="@p">@p</a>
-        }
+        <li class="@(p == Model.PageNumber ? "active" : "")">
+            <a asp-action="Index" asp-controller="Home" asp-route-category="@Model.Category" asp-route-pageNumber="@p">@p</a>
+        </li>
+    }
     }
 
 
     @if (Model.NextPage)
     {
-        <a asp-action="Index" asp-controller="Home" asp-route-category="@Model.Category" asp-route-pageNumber="@(Model.PageNumber + 1)">></a>
+<li class="waves-effect">
+            <a asp-action="Index" asp-controller="Home" asp-route-category="@Model.Category" asp-route-pageNumber="@(Model.PageNumber + 1)">
+                <i class="material-icons">chevron_right</i>
+            </a>
+        </li>
     }
 
 
-</div>
+</ul>

@@ -10,7 +10,6 @@
 @*<h2> HOME PAGE </h2>
 <img src="~/content/static/123853.jpg" width="500" />*@
 <div class="main-img">
-    <span class="title">Blog de la hess</span>
 </div>
 <div class="container">
 
@@ -22,7 +21,7 @@
 
         <a class="post" asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">
             <img src="@image_path" width="500" />
-            <span class="title">
+            <span class="title overlay center">
                 @post.Title
             </span>
         </a>

@@ -16,20 +16,34 @@
 <body>
     <div>
         <nav>
-            <a asp-controller="Home" asp-action="Index">Home</a>
-            <a asp-controller="Home" asp-action="Index" asp-route-category="Programing">Programing</a>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Blog de la hess</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li>
+                        <a asp-controller="Home" asp-action="Index">Accueil</a>
+                    </li>
+                    <li>
+                        <a asp-controller="Home" asp-action="Index" asp-route-category="Programing">Programmation</a>
+                    </li>
 
-            <a asp-controller="Panel" asp-action="Index">Admin Panel</a>
+                    <li>
+                        <a asp-controller="Panel" asp-action="Index">Gestion des articles</a>
+                    </li>
 
-            @if (User.Identity.IsAuthenticated)
-            {
-                <a asp-controller="Auth" asp-action="Logout">Logout</a>
-            }
-            else
-            {
-                <a asp-controller="Auth" asp-action="Login">Sign in</a>
-            }
-
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>
+                            <a asp-controller="Auth" asp-action="Logout">Déconnexion</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a asp-controller="Auth" asp-action="Login">Se connecter</a>
+                        </li>
+                    }
+                </ul>
+            </div>
         </nav>
     </div>
     <div>
