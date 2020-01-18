@@ -35,6 +35,7 @@ namespace Blog.Data.Repository
         {
             Func<Post, bool> InCategory = (post) => { return post.Category.ToLower().Equals(category.ToLower()); };
             int pageSize = 3;
+
             int skipAmount = pageSize * (pageNumber - 1);
 
             var query = _ctx.Posts.AsQueryable();
@@ -45,13 +46,13 @@ namespace Blog.Data.Repository
             }
 
             int postsCount = query.Count();
-            int pageCount = (int)Math.Ceiling(postsCount * 1.0 / pageSize);
+            int pageCount = (int)Math.Ceiling((double)postsCount/ pageSize);
             return new IndexViewModel
             {
                 PageNumber = pageNumber,
                 PageCount = pageCount,
                 NextPage = postsCount > skipAmount + pageSize,
-                Pages = PageNumbers(pageNumber, postsCount),
+                Pages = PageNumbers(pageNumber, pageCount).ToList(),
                 Category = category,
                 Posts = query
                 .Skip(skipAmount)
@@ -62,41 +63,51 @@ namespace Blog.Data.Repository
 
         private IEnumerable<int> PageNumbers(int pageNumber, int pageCount)
         {
-            List<int> pages = new List<int>();
-            int midPoint = pageNumber;
-            if (midPoint < 3)
+            if ( pageCount <= 5)
             {
-                midPoint = 3;
-            }
-            else if (midPoint > pageCount - 2)
-            {
-                midPoint = pageCount - 2;
-            }
-
-            int lowerBound = midPoint - 2;
-            int upperBound = midPoint + 2;
-
-            if (lowerBound != 1)
-            {
-                yield return 1;
-                if (lowerBound -1 > 1)
+                for (int i = 1 ; i <= pageCount; i++)
                 {
-                    yield return -1;
+                    yield return i;
                 }
             }
-
-            for (int i = midPoint - 2; i <= midPoint + 2; i++)
+            else
             {
-                yield return i;
-            }
 
-            if (upperBound != pageCount)
-            {
-                if (pageCount -upperBound  > 1)
+                int midPoint = pageNumber;
+                if (midPoint < 3)
                 {
-                    yield return -1;
+                    midPoint = 3;
                 }
-                yield return pageCount;
+                else if (midPoint > pageCount - 2)
+                {
+                    midPoint = pageCount - 2;
+                }
+
+                int lowerBound = midPoint - 2;
+                int upperBound = midPoint + 2;
+
+                if (lowerBound != 1)
+                {
+                    yield return 1;
+                    if (lowerBound -1 > 1)
+                    {
+                        yield return -1;
+                    }
+                }
+
+                for (int i = midPoint - 2; i <= upperBound; i++)
+                {
+                    yield return i;
+                }
+
+                if (upperBound != pageCount)
+                {
+                    if ( pageCount - upperBound  > 1 )
+                    {
+                        yield return -1;
+                    }
+                    yield return pageCount;
+                }
             }
         }
         public Post GetPost(int id)

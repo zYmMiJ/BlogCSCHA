@@ -19,12 +19,17 @@ using Blog.Models;
 #line default
 #line hidden
 #line 2 "C:\Users\subji\source\repos\BlogCSCHA\Blog\Views\_ViewImports.cshtml"
+using Blog.Models.Comments;
+
+#line default
+#line hidden
+#line 3 "C:\Users\subji\source\repos\BlogCSCHA\Blog\Views\_ViewImports.cshtml"
 using Blog.ViewModels;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fe63c0c50050ae3f78c9dc4d5fb22dae4557973d", @"/Views/Shared/_pages.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9c1dd89ee945937e85fe2e65d1d46d865d868a6a", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"589cc89b1f87f47cabbc31f53b279948e21071bd", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__pages : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IndexViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -64,7 +69,7 @@ using Blog.ViewModels;
             WriteLiteral("        ");
             EndContext();
             BeginContext(93, 157, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1a7736497ce643a786eeb3b07254db60", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "419870d93986425693cbc9a547636e91", async() => {
                 BeginContext(221, 25, true);
                 WriteLiteral("\r\n            <\r\n        ");
                 EndContext();
@@ -139,7 +144,7 @@ using Blog.ViewModels;
             WriteLiteral("            ");
             EndContext();
             BeginContext(437, 162, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2bfe3af2d2dd4584a5f473d33f17e94a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "948d0db238dc4031b65a80fb4a7c32a0", async() => {
                 BeginContext(594, 1, false);
 #line 19 "C:\Users\subji\source\repos\BlogCSCHA\Blog\Views\Shared\_pages.cshtml"
                                                                                                                                                                    Write(p);
@@ -214,7 +219,7 @@ AddHtmlAttributeValue("", 447, p == Model.PageNumber ? "active" : "", 447, 40, f
             WriteLiteral("        ");
             EndContext();
             BeginContext(664, 133, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4868c57b8b624b3e9ae2e037f164048f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1b19a7dfa0ac4b0d850640636c8abe50", async() => {
                 BeginContext(792, 1, true);
                 WriteLiteral(">");
                 EndContext();

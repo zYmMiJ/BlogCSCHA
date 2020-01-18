@@ -26,22 +26,24 @@
                         <a asp-controller="Home" asp-action="Index" asp-route-category="Programing">Programmation</a>
                     </li>
 
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Admin"))
+                {
                     <li>
-                        <a asp-controller="Panel" asp-action="Index">Gestion des articles</a>
+                        <a asp-controller="Home" asp-action="Index" asp-route-category="Panel">Gestion des articles</a>
                     </li>
+                    
+                }
 
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li>
-                            <a asp-controller="Auth" asp-action="Logout">Déconnexion</a>
-                        </li>
-                    }
-                    else
-                    {
-                        <li>
-                            <a asp-controller="Auth" asp-action="Login">Se connecter</a>
-                        </li>
-                    }
+              <li> <a asp-controller="Auth" asp-action="Logout">Déconnexion</a></li>
+            }
+            else
+            {
+              <li><a asp-controller="Auth" asp-action="Login">Connexion</a></li>
+            }
+
+
                 </ul>
             </div>
         </nav>
