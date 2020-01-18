@@ -13,6 +13,13 @@
         <span class="title overlay center">
             <p>Blog de la hess</p
         </span>
+        <form asp-controller="home" class="center" style="width: 35vh" asp-action="Index" method="get">
+
+            <input type="hidden" name="pageNumber" value="@Model.PageNumber" />
+
+            <input type="hidden" name="category" value="@Model.Category" />
+            <h2><input type="text" name="search" style="margin-left: 80vh; font-size:3vh; color:white" value="" /></h2>
+        </form>
     </div>
 <div class="container">
 

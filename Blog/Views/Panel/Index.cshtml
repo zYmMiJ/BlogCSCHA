@@ -8,7 +8,7 @@
 
 
             <a class="waves-effect waves-light btn-large red" asp-controller="Panel" asp-action="Edit">
-                Add new Post
+                Ajouter un nouvel article
                 <i class="material-icons right">add</i>
             </a>
         </div>
@@ -22,12 +22,12 @@
 
                     <div class="col s12 m6 l3">
 
-                        <div class="card" style="width:20vw;">
+                        <div class="card" style="width:20vw";>
                             <div class="card-image">
                                 @if (!String.IsNullOrEmpty(post.Image))
                                 {
                                     var image_path = $"/Image/{post.Image}";
-                                    <img style="width:20vw;height:14vw;" src="@image_path" />
+                                    <img style="width:20vw;height:14vw; object-fit: cover;" src="@image_path" />
                                     <a asp-controller="Panel" asp-action="Edit" asp-route-id="@post.Id" class="btn-floating  btn-large halfway-fab waves-effect waves-light red">
                                         <i class="material-icons" >
                                             edit
@@ -43,7 +43,7 @@
                                 
 
                                 <a asp-controller="Panel" asp-action="Remove" asp-route-id="@post.Id">
-                                    <i class="material-icons left">delete</i>Remove
+                                    <i class="material-icons left">delete</i>Supprimer
                                 </a>
                             </div>
                         </div>

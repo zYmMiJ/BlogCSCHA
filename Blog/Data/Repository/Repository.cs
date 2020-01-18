@@ -31,7 +31,7 @@ namespace Blog.Data.Repository
         }
 
 
-        public IndexViewModel GetAllPosts(int pageNumber, string category)
+        public IndexViewModel GetAllPosts(int pageNumber, string category, string search)
         {
             Func<Post, bool> InCategory = (post) => { return post.Category.ToLower().Equals(category.ToLower()); };
             int pageSize = 3;
@@ -43,6 +43,14 @@ namespace Blog.Data.Repository
             if (!String.IsNullOrEmpty(category))
             {
                 query = query.Where(c => InCategory(c));
+            }
+            //Condition de recherche permet de voir si le string search récuperé en parametre contient un tite ou un body ou une description
+            if (!String.IsNullOrEmpty(search))
+            {
+                query = query.Where(x => x.Title.Contains(search) 
+                                    || x.Body.Contains(search) 
+                                    || x.Tags.Contains(search)
+                                    || x.Description.Contains(search));
             }
 
             int postsCount = query.Count();

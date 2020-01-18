@@ -14,7 +14,7 @@ namespace Blog.Data.Repository
         MainComment GetMainComment(int id);
         SubComment GetSubComment(int id);
         List<Post> GetAllPosts();
-        IndexViewModel GetAllPosts(int pageNumber, string Category);
+        IndexViewModel GetAllPosts(int pageNumber, string Category, string search);
 
         void AddPost(Post post);
         void UpdatePost(Post post);
