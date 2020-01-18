@@ -12,10 +12,11 @@
                 {
                     var image_path = $"/Image/{Model.Image}";
                     <img src="@image_path" />
-                    <span class="title">@Model.Title</span>
+                    
                 }
         </div>
         <div class="post-body">
+            <h1>@Model.Title</h1>
             @Html.Raw(Model.Body)
         </div>
         <hr>

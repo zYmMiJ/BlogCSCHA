@@ -6,6 +6,7 @@ using System.Text;
 using Blog.Models;
 using Blog.Models.Comments;
 using Microsoft.EntityFrameworkCore;
+using Blog.ViewModels;
 
 namespace Blog.Data.Repository
 {
@@ -33,7 +34,7 @@ namespace Blog.Data.Repository
         public IndexViewModel GetAllPosts(int pageNumber, string category)
         {
             Func<Post, bool> InCategory = (post) => { return post.Category.ToLower().Equals(category.ToLower()); };
-            int pageSize = 1;
+            int pageSize = 3;
             int skipAmount = pageSize * (pageNumber - 1);
 
             var query = _ctx.Posts.AsQueryable();
