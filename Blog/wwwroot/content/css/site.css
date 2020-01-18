@@ -74,3 +74,46 @@ nav {
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
 }
+
+.pages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2em;
+}
+
+    .pages a {
+        background-color: #aaa;
+        color: white;
+        padding: 0.5em 0.75rem;
+        border: 1px solid #eee;
+        margin: 0 0.25rem;
+    }
+
+        .pages a.active {
+            background-color: #ccc;
+        }
+
+        .pages a:hover {
+            background-color: #999;
+            text-decoration: none;
+        }
+
+.three-dots {
+    line-height: 1;
+    font-size: 24px;
+}
+
+.sign-in-form{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in-form div {
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
