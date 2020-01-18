@@ -15,6 +15,8 @@ namespace Blog.ViewModels
         public string CurrentImage { get; set; } = "";
         //IformFile = Interface pour n'importe quel file video image etc...
         public IFormFile Image { get; set; } = null;
+        public IFormFile Video { get; set; } = null;
+        public string CurrentVideo{ get; set; } = "";
 
         public string Description { get; set; } = "";
         public string Tags { get; set; } = "";

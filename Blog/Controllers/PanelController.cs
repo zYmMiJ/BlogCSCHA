@@ -44,6 +44,7 @@ namespace Blog.Controllers
                     Title = post.Title,
                     Body = post.Body,
                     CurrentImage = post.Image,
+                    CurrentVideo = post.Video,
                     Description = post.Description,
                     Tags = post.Tags,
                     Category = post.Category
@@ -72,6 +73,16 @@ namespace Blog.Controllers
             {
                 post.Image = await _fileManager.SaveImage(vm.Image);
             }
+
+            if (vm.Video == null)
+            {
+                post.Video = vm.CurrentVideo;
+            }
+            else
+            {
+                post.Video = await _fileManager.SaveImage(vm.Video);
+            }
+
             if (post.Id > 0)
                 _repo.UpdatePost(post);
             else
